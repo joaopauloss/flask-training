@@ -1,5 +1,6 @@
 var d = new Date();
 document.getElementById("time").innerHTML = d;
+
 // var today = new Date();
 // var datetime = "Acesso: " + today.getDate() + "/"
 //                 + (today.getMonth()+1)  + "/"
@@ -9,3 +10,7 @@ document.getElementById("time").innerHTML = d;
 //                 + today.getSeconds();
 
 // document.write(datetime);
+
+function eraseText() {
+    document.getElementById("area").value = "";
+}

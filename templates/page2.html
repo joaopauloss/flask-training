@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Page 2 - Flask Training</title>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <h1>Page 2</h1>
+        <a href= "{{ url_for('index')}}"><button type="button" onclick="">Back</button></a>
+    </div>
+
+    <script src="../static/main.js"></script>
+
+{% endblock %}

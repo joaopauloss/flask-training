@@ -1,20 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Flask Training</title>
+{% endblock %}
+
+{% block body %}
     <div>
         <h1>Hello World !</h1>
+        <a href= "{{ url_for('page1')}}"><button type="button">Page 1</button></a>
+        <a href= "{{ url_for('page2')}}"><button type="button">Page 2</button></a>
+        <a href= "{{ url_for('page3')}}"><button type="button">Page 3</button></a>
     </div>
     <div>
         <p id="time"></p>
     </div>
 
     <!-- <script src="{{ url_for('static', filename='time.js') }}"></script> -->
-    <script src="/static/time.js"></script>
-</body>
-</html>
+    <script src="../static/main.js"></script>
+{% endblock %}
+
+
