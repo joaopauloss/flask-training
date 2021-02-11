@@ -1,13 +1,86 @@
 {% extends 'base.html' %}
 
 {% block head %}
+<link rel="stylesheet" href="../static/css/index.css">
+<link rel="stylesheet" href="../static/bootstrapfiles/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="../static/material-design-icons-iconfont/dist/material-design-icons.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <title>Page 3 - Flask Training</title>
+
 {% endblock %}
 
 {% block body %}
-    <div>
-        <h1>Page 3</h1>
-        <a href= "{{ url_for('index')}}"><button type="button" onclick="">Back</button></a>
+<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 mr-0 px-3" >Page 3</a>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            <div id="sidebarItems" class="sidebar-sticky pt-0">
+                <ul class="nav flex-column">
+                    <li class="nav-item ni-height">
+                        <a class="nav-link d-flex align-items-center justify-content-start options-text-style nl-height" href="{{ url_for('index')}}" id="back">
+                            <span class="material-icons md-icon-size">undo</span>
+                            Index
+                        </a>
+                    </li>
+                    <li class="nav-item ni-height">
+                        <a class="nav-link d-flex align-items-center justify-content-start options-text-style nl-height" href="#" id="option1">
+                            <span class="material-icons md-icon-size">description</span>
+                            Option 1
+                        </a>
+                    </li>
+                    <li class="nav-item ni-height">
+                        <a class="nav-link d-flex align-items-center justify-content-start options-text-style nl-height" href="#" id="option2">
+                            <span class="material-icons md-icon-size">description</span>
+                            Option 2
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <main role="main" class="main-content-border col-md-9 ml-sm-auto col-lg-10 px-md-4">
+            <div id="div-html" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+            </div>
+        </main>
     </div>
+</div>
+
+<script>
+  $('#option1').click(function() {
+    $.ajax({
+      type: 'GET',
+      url: '{{ url_for("subpage1")}}',
+      dataType: 'html',
+      success: function(response) {
+        $('#div-html').html(response);
+      }
+    });
+  });
+  
+  $('#option2').click(function() {
+    $.ajax({
+      type: 'GET',
+      url: '{{ url_for("subpage2")}}',
+      dataType: 'html',
+      success: function(response) {
+        $('#div-html').html(response);
+      }
+    });
+  });
+</script>
+
+<script src="../static/js/subpage.js"></script>
+
+    <!-- <script>
+        (function($) {
+          $('nav li').click(function() {
+            $(this).addClass('active').siblings('li').removeClass('active');
+            $('section:nth-of-type('+$(this).data('rel')+')').stop().fadeIn(400, 'linear').siblings('section').stop().fadeOut(400, 'linear'); 
+          });
+        })(jQuery);
+      </script> -->
 
 {% endblock %}

@@ -2,21 +2,30 @@
 
 {% block head %}
 <title>Flask Training</title>
+
 {% endblock %}
 
 {% block body %}
     <div>
+        
         <h1>Hello World !</h1>
-        <a href= "{{ url_for('page1')}}"><button type="button">Page 1</button></a>
-        <a href= "{{ url_for('page2')}}"><button type="button">Page 2</button></a>
-        <a href= "{{ url_for('page3')}}"><button type="button">Page 3</button></a>
+        <button type="button" onclick="redirectPage('/page1')">Page 1</button>
+        <button type="button" onclick="redirectPage('/page2')">Page 2</button>
+        <button type="button" onclick="redirectPage('/page3')">Page 3</button>
+        <input name="csrf_token" type="hidden" value="{{ csrf_token }}">
+        <form action="" method="POST">
+        <button type="submit" class="button is-success">
+            Login
+        </button>
+        </form>
     </div>
     <div>
         <p id="time"></p>
     </div>
 
-    <!-- <script src="{{ url_for('static', filename='time.js') }}"></script> -->
-    <script src="../static/main.js"></script>
+    <script src="../static/js/redirect-page.js"></script>
+    <script src="../static/js/date.js"></script>
+
 {% endblock %}
 
 

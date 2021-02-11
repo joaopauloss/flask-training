@@ -7,7 +7,7 @@
 {% block body %}
     <div>
         <h1>Page 2</h1>
-        <a href= "{{ url_for('index')}}"><button type="button" onclick="">Back</button></a>
+        <button type="button" onclick="redirectPage('/')">Back</button>
     </div>
 
     <div>
@@ -15,14 +15,14 @@
         <form action="" method="post">
             <label for="inputText">Input: </label>
             <input type="text" id="content" name="content"><br><br>
-            <input type="submit" name="submit_button" value="read"></input>
             <input type="submit" name="submit_button" value="write"></input>
+            <input type="submit" name="submit_button" value="read"></input>
         </form>
         </p>
           
           <p>{{content}}</p>
     </div>
 
-    <script src="../static/main.js"></script>
+    <script src="../static/js/redirect-page.js"></script>
 
 {% endblock %}

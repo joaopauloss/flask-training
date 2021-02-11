@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block head %}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+<script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+{% endblock %}
+
+{% block body %}
+<section class="">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-half">
+            <form action="/login" method="POST">
+              <div class="field">
+                <label class="label">Username</label>
+                <div class="control has-icons-left has-icons-right">
+                  <input class="input" type="text" name="txtUsr" placeholder="Username">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="field">
+                <label class="label">Password</label>
+                <p class="control has-icons-left">
+                  <input class="input" type="password" name="txtPwd" placeholder="Password">
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-lock"></i>
+                  </span>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input name="csrf_token" type="hidden" value="{{ csrf_token }}">
+                  <button type="submit" class="button is-success">
+                    Login
+                  </button>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<script>
+
+
+  //  $('#loginbutton').click(function() {
+  //   $.ajax({
+  //     type: 'GET',
+  //     url: '{{ url_for("index")}}',
+  //     dataType: 'html'
+  //     success: function(response) {
+  //       // $('#div-html').html(response);
+  //     }
+  //   });
+  // });
+// get (options) {
+//      let self = this
+//      $.ajax({
+//        method: 'GET',
+//        dataType: 'json',
+//        headers: {
+//          'X-CSRF-TOKEN': Cookies.get('csrf_access_token')
+//        },
+//        url: '{{ url_for("index")}}',
+//        success (result, statusText) {
+//          // Handle success
+//        },
+//        error (jqXHR, textStatus, errorThrown) {
+//          //handle error
+//        }
+//      })
+//    }
+</script> 
+{% endblock %}

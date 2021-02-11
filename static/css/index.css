@@ -1,0 +1,152 @@
+body {
+  font-size: .875rem;
+}
+
+.bottombar {
+  /*overflow: hidden;*/
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #333;
+  color: #f2f2f2;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 110;
+}
+.bottombar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 3px 8px;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding: 0 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) { /* TODO: change this width */
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 64px - 39px); /* 100% of vertical height minus top bar minus change-device button */
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link.active {
+  color: rgba(44, 173, 2, 0.98);
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+  text-transform: uppercase;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  font-size: 1rem;
+  background-color: rgba(0, 0, 0, .25);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+}
+
+.navbar .navbar-toggler {
+  top: .25rem;
+  right: 1rem;
+}
+
+.navbar .form-control {
+  padding: .75rem 1rem;
+  border-width: 0;
+  border-radius: 0;
+}
+
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+.nav-item.ni-height {
+  height: 30px;
+}
+
+.nav-item.double-ni-height {
+  height: 48px;
+}
+
+.nav-link.nl-height {
+  height: 30px;
+}
+
+.nav-link.double-nl-height {
+  height: 48px;
+}
+
+.material-icons.md-icon-size { font-size: 22px; }
+
+.options-text-style { font-size: .9rem}
+
+.sidebar .nav-link:hover .material-icons,
+.sidebar .nav-link.active .material-icons {
+  color: inherit;
+}
+
+.sidebar .nav-link .material-icons {
+  margin-right: 4px;
+  color: #999;
+}
+
+.main-content-border {
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+/* style for download content one any page */
+.download-button {
+  font-weight: 500;
+  color: #333;
+}
+
+.download-button:hover{
+  color: #28a745;
+}
